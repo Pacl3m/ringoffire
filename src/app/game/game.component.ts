@@ -23,18 +23,22 @@ export class GameComponent implements OnInit {
 
   newGame() {
     this.game = new Game();
-    console.log(this.game);
   }
 
   takeCard() {
-    if (!this.pickCardAnimation) {
-      this.currentCard = this.game.stack.pop();
-      this.pickCardAnimation = true;
-
-      setTimeout(() => {
-        this.pickCardAnimation = false;
-        this.game.playedCards.push(this.currentCard);
-      }, 1500);
+    if (this.game.players.length == 0) {
+      this.openDialog();
+    } else {
+      if (!this.pickCardAnimation) {
+        this.currentCard = this.game.stack.pop();
+        this.pickCardAnimation = true;
+        this.game.currentPlayer++;
+        this.game.currentPlayer = this.game.currentPlayer % this.game.players.length;
+        setTimeout(() => {
+          this.pickCardAnimation = false;
+          this.game.playedCards.push(this.currentCard);
+        }, 1500);
+      }
     }
   }
 
@@ -43,8 +47,9 @@ export class GameComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((result: string) => {
-      this.game.players.push(result)
-      console.log(result);
+      if (result) {
+        this.game.players.push(result)
+      }
     });
   }
 }

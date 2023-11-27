@@ -1,5 +1,9 @@
-<app-player *ngFor="let player of game.players; let i = index" [ngStyle]="{'top.px': 150 + i * 100}" [playerActive]="i == game.currentPlayer"
-    class="player-position" [name]="player"></app-player>
+<app-player *ngFor="let player of game.players; let i = index" [ngStyle]="{'top.px': 150 + i * 100}"
+    [playerActive]="i == game.currentPlayer" class="player-position" [name]="player"></app-player>
+
+<a mat-fab color="primary" routerLink="/" class="btn-home">
+    <mat-icon>home</mat-icon>
+</a>
 
 <div class="field">
     <div class="card-stack">
@@ -16,7 +20,11 @@
 
 
 <button mat-fab color="primary" (click)="openDialog()" class="btn-add">
-    <mat-icon>add</mat-icon>
-  </button>
+    <mat-icon>person_add</mat-icon>
+</button>
 
-  <app-game-info [card]="currentCard" class="pin-bottom"></app-game-info>
+<button mat-fab color="primary" (click)="newGame()" class="btn-restart">
+    <mat-icon>restart_alt</mat-icon>
+</button>
+
+<app-game-info [card]="currentCard" class="pin-bottom"></app-game-info>
