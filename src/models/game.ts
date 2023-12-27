@@ -17,8 +17,7 @@ export class Game {
 
 function shuffleArray(array: string[]) {
     function randomSort() {
-      return 0.5 - Math.random();
+        return 0.5 - Math.random();
     }
-  
     return array.sort(randomSort);
-  }
+}
