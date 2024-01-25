@@ -1,12 +1,12 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-player',
-  templateUrl: './player.component.html',
-  styleUrl: './player.component.scss'
+  selector: 'app-player-mobile',
+  templateUrl: './player-mobile.component.html',
+  styleUrl: './player-mobile.component.scss'
 })
-export class PlayerComponent {
-
+export class PlayerMobileComponent {
+ 
   @Input() name: any;
   @Input() playerImg: string = '1.png';
   @Input() playerActive: boolean = false;
