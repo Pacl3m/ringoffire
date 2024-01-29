@@ -43,3 +43,13 @@
         width: 75px;
     }
 }
+
+@media (max-width: 500px) {
+    .active-player {
+        height: 90px;
+
+        img {
+            width: 50px;
+        }
+    }
+}

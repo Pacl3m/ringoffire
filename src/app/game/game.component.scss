@@ -135,6 +135,27 @@
 }
 
 @media (max-width: 800px) {
+    .btn-restart {
+        width: 40px;
+        right: 20px;
+        height: 40px;
+        bottom: 20px;
+    }
+
+    .btn-home {
+        left: 20px;
+        width: 40px;
+        height: 40px;
+        top: 20px;
+    }
+
+    .btn-add {
+        bottom: 20px;
+        right: 70px;
+        width: 40px;
+        height: 40px;
+    }
+
     .pin-bottom {
         bottom: 0;
         left: 0;
@@ -168,5 +189,9 @@
 @media (max-width: 550px) {
     .field {
         justify-content: unset;
+    }
+
+    .scroll-container {
+        padding-left: 70px;
     }
 }

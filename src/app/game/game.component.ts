@@ -21,7 +21,7 @@ export class GameComponent {
     this.newGame();
     this.route.params.subscribe(params => {
       this.gameId = params['id'];
-      console.log('Game ID:', this.gameId);
+      // console.log('Game ID:', this.gameId);
       this.gameService.setGameId(this.gameId);
     });
     this.gameService.setGameComponent(this);

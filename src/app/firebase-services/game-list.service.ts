@@ -19,21 +19,21 @@ export class GameListService {
 
     setGameId(id: string): void {
         this.gameId = id;
-        console.log('Game ID in service:', this.gameId);
+        // console.log('Game ID in service:', this.gameId);
     }
 
     getData() {
         let aCollection = collection(this.firestore, 'games');
         let docRef = doc(aCollection, this.gameId);
-        console.log('DocRef:', docRef);
+        // console.log('DocRef:', docRef);
 
         onSnapshot(aCollection, (list) => {
             list.forEach(element => {
-                console.log(element.id, ':', element.data());
+                // console.log(element.id, ':', element.data());
             });
             getDoc(docRef).then((docSnap: any) => {
                 if (docSnap) {
-                    console.log('Dokumentendaten', docSnap.data());
+                    // console.log('Dokumentendaten', docSnap.data());
                     this.gameComponent?.loadGameId(docSnap.data());
                 }
             })
